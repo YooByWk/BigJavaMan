@@ -1,10 +1,10 @@
 package com.in28minutes.learn_spring_framework.game;
 
 public class GameRunner {
-	MarioGame game;
+	private GamingConsole game;
 	
 	// 생성자?
-	public GameRunner(MarioGame game) {
+	public GameRunner(GamingConsole game) {
 		this.game = game;
 	}
 
@@ -19,7 +19,7 @@ public class GameRunner {
 		game.right();
 		game.up();
 		game.down();
-		game.left();
+		game.left(); 
 		
 		System.out.println("완료");
 	}
