@@ -1,10 +1,14 @@
 package com.in28minutes.learn_spring_framework.game;
 
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Component
 public class GameRunner {
 	private GamingConsole game;
 	
 	// 생성자?
-	public GameRunner(GamingConsole game) {
+	public GameRunner(@Qualifier("SuperContraGame") GamingConsole game) {
 		this.game = game;
 	}
 
@@ -14,7 +18,6 @@ public class GameRunner {
 		// 좋은 구조 아님. 로깅은 추후 한다. 
 		// 추후 로깅까지 System out 사용
 		System.out.println("Running game: "+ game);
-//		System.out.println("이거 진자 되는거");
 		
 		game.right();
 		game.up();
